@@ -69,8 +69,9 @@ client.on("message", message => {
   function discoRole() {
     let random = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
     roles.forEach((role) => {
-      let theRole = message.guild.roles.find("name", 'Rainbow');
-      if(!theRole) return message.channel.send('ليس هناك رتبه رينبو لانشاء الرتبه اكتب R!set ')
+      let theRole = message.guild.roles.find(`name`, "Rainbow");
+      if(!theRole) return;
+	        setInterval(() => { discoRole(); }, config.ms);
       theRole.edit({color: random}).catch(e => {
         return;
       });
