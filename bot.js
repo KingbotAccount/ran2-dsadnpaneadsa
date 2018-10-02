@@ -75,7 +75,7 @@ console.log('Welcome')
  
 
  
-
+    })
 
 client.login(process.env.BOT_TOKEN)
 
