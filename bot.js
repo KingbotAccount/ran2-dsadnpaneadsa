@@ -34,9 +34,9 @@ client.user.setGame(`🌈RAINBOW|R!help | R!invite`);
       .setDescription(`
              
 =====================🌈 RainbowBot. 🌈=====================
-R!startrainbow = لبدا امر الرينبو
-R!invite = لاضافه البوت
-**!ملاحظه: اذا ما شتغل البوت جرب تحط رتبه البوت اعلى من رتبه الرينبو **
+R!set = لبدا وانشاء رتبه الرينبو | Rainbow Start & Create Rainbow Role
+R!invite = لاضافه البوت | Bot Invite
+**!ملاحظه: اذا ما شتغل البوت جرب تحط رتبه البوت اعلى من رتبه الرينبو ** | **NOTE: If the bot is working, try to drop the bot role higher than the Rainbow role !**
 =====================🌈 RainbowBot. 🌈=====================
 `)
    message.author.sendEmbed(embed)
@@ -44,7 +44,7 @@ R!invite = لاضافه البوت
    }
    });
    client.on("message", message => {
- if(message.content.startsWith(prefix + "startrainbow")) {
+ if(message.content.startsWith(prefix + "set")) {
    let rainbow = message.guild.roles.find(`name`, "Rainbow");
   //start of create role
   if(!rainbow){
