@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
-const prefix = "="
+const prefix = "R!"
 
 console.log(`hello`)
 
@@ -26,7 +26,7 @@ client.user.setGame(`🌈RAINBOW|=help | =invite`);
 
 
    client.on("message", message => {
- if (message.content === "=help") {
+ if (message.content === "R!help") {
      message.channel.send('**:mailbox_with_mail: تم ارسال رسالة في الخاص** :mailbox_with_mail: ');
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
@@ -43,5 +43,16 @@ client.user.setGame(`🌈RAINBOW|=help | =invite`);
    
    }
    });
+   client.on("message", message => {
+ if(message.content.startsWith(prefix + "startrainbow")) {
+   let rainbow = message.guild.roles.find(`name`, "Rainbow");
+  //start of create role
+  if(!rainbow){
+         rainbow =  message.guild.createRole({
+        name: "Rainbow",
+        color: "#000000",
+        permissions:[]
+      })
+    }}})
   
 client.login(process.env.BOT_TOKEN)
