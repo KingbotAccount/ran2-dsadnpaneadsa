@@ -1,3 +1,4 @@
+
 const Discord = require('discord.js')
 const client = new Discord.Client()
 const prefix = "R!"
@@ -33,7 +34,8 @@ client.user.setGame(`🌈RAINBOW|R!help | R!invite`);
       .setDescription(`
              
 =====================🌈 RainbowBot. 🌈=====================
-R!createrole = لانشاء رتبه رينبو
+R!startrainbow = لبدا امر الرينبو
+R!stoprainbow = ايقاف امر الرينبو
 R!invite = لاضافه البوت
 **!ملاحظه: اذا ما شتغل البوت جرب تحط رتبه البوت اعلى من رتبه الرينبو **
 =====================🌈 RainbowBot. 🌈=====================
@@ -43,7 +45,7 @@ R!invite = لاضافه البوت
    }
    });
    client.on("message", message => {
- if(message.content.startsWith(prefix + "createrole")) {
+ if(message.content.startsWith(prefix + "startrainbow")) {
    let rainbow = message.guild.roles.find(`name`, "Rainbow");
   //start of create role
   if(!rainbow){
@@ -55,3 +57,4 @@ R!invite = لاضافه البوت
     }}})
   
 client.login(process.env.BOT_TOKEN)
+
