@@ -29,24 +29,11 @@ console.log(`hello`)
      if(message.content.startsWith(prefix + "startrainbow")) {
 let rainbow = message.guild.roles.find(`name`, "Rainbow");
   //start of create role
-  if(!Rainbow){
-    try{
-      rainbow = await message.guild.createRole({
-        name: "Rainbow",
+  if(!rainbow){
+         rainbow =  message.guild.createRole({
+        name: "rainbow",
         color: "#000000",
         permissions:[]
       })
-      message.guild.channels.forEach(async (channel, id) => {
-        await channel.overwritePermissions(Rainbow, {
-          SEND_MESSAGES: false,
-          ADD_REACTIONS: false
-        });
-      });
-    }catch(e){
-      console.log(e.stack);
-    }
-  }
-
-
-
+    }}})
 client.login(process.env.BOT_TOKEN)
