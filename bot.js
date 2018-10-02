@@ -5,6 +5,10 @@ const prefix = "="
 console.log(`hello`)
 
 
+client.on('ready', () => {                           
+client.user.setGame(`🌈RAINBOW|=help | =invite`);                                                                                                                                                                                                                                                                                                                                                                                                                            
+});
+
    client.on('message', message => {
 	   if(message.content.startsWith(`${prefix}invite`)){
 		   if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
