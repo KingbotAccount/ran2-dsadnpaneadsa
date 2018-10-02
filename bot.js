@@ -56,5 +56,31 @@ R!invite = لاضافه البوت | Bot Invite
       })
     }}})
   
+
+client.on("message", message => {
+  
+ 
+  function discoRole() {
+    let random = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+    roles.forEach((role) => {
+      let theRole = message.guild.roles.find("name", role);
+      if(!theRole) return;
+      setInterval(() => { discoRole(); }, config.ms);
+      theRole.edit({color: random}).catch(e => {
+        return;
+      });
+    });
+  }
+ 
+
+
+  } 
+ 
+)
+const config = require('./config.json');
+const prefix = config.prefix;
+const roles = config.roleToDisco;
+
+
 client.login(process.env.BOT_TOKEN)
 
