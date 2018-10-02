@@ -6,7 +6,7 @@ console.log(`hello`)
 
 
 client.on('ready', () => {                           
-client.user.setGame(`🌈RAINBOW|=help | =invite`);                                                                                                                                                                                                                                                                                                                                                                                                                            
+client.user.setGame(`🌈RAINBOW|R!help | R!invite`);                                                                                                                                                                                                                                                                                                                                                                                                                            
 });
 
    client.on('message', message => {
