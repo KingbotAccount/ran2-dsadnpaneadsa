@@ -43,15 +43,5 @@ client.user.setGame(`🌈RAINBOW|=help | =invite`);
    
    }
    });
-    client.on("message", message => {
-     if(message.content.startsWith(prefix + "startrainbow")) {
-let rainbow = message.guild.roles.find(`name`, "Rainbow");
-  //start of create role
-  if(!rainbow){
-         rainbow =  message.guild.createRole({
-        name: "rainbow",
-        color: "#000000",
-        permissions:[]
-      })
-    }}})
+  
 client.login(process.env.BOT_TOKEN)
