@@ -36,7 +36,8 @@ client.user.setGame(`🌈RAINBOW|R!help | R!invite`);
 =====================🌈 RainbowBot. 🌈=====================
 R!set = لبدا وانشاء رتبه الرينبو | Rainbow Start & Create Rainbow Role
 R!invite = لاضافه البوت | Bot Invite
-**!ملاحظه: اذا ما شتغل البوت جرب تحط رتبه البوت اعلى من رتبه الرينبو ** | **NOTE: If the bot is working, try to drop the bot role higher than the Rainbow role !**
+**!ملاحظه: اذا ما شتغل البوت جرب تحط رتبه البوت اعلى من رتبه الرينبو ** 
+**NOTE: If the bot is working, try to drop the bot role higher than the Rainbow role !**
 =====================🌈 RainbowBot. 🌈=====================
 `)
    message.author.sendEmbed(embed)
