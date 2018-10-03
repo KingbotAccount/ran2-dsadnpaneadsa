@@ -55,34 +55,28 @@ R!invite = لاضافه البوت | Bot Invite
         permissions:[]
       })
     }}})
+  
 
 
- 
+    client.on("message", message => {
 console.log('Welcome')
-
-client.on('ready', () => { 
-	const config = require('./config.json');
-        const roles = config.roleToDisco;
-
- 
+    const config = require('./config.json');
+ const roles = config.roleToDisco;
   function discoRole() {
     let random = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
     roles.forEach((role) => {
-      if(!roles) return;
-	        setInterval(() => { discoRole(); }, config.ms);
-      roles.edit({color: random}).catch(e => {
-        return;
+      let theRole = message.guild.roles.find("name", role);
+      if(!theRole) return;
+	    client.on('ready', () => {                           
+      theRole.edit({color: random}).catch(e => {
+        return setInterval(() => { discoRole(); }, config.ms);
       });
     });
   }
-
-    setInterval(() => { discoRole(); }, config.ms);
-
  
 
- 
-
-
-})
+    )}})
 
 client.login(process.env.BOT_TOKEN)
+
+
