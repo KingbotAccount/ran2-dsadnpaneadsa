@@ -58,25 +58,33 @@ R!invite = لاضافه البوت | Bot Invite
   
 
 
-    client.on("message", message => {
+ 
 console.log('Welcome')
+
+ 
+client.on("message", message => {
     const config = require('./config.json');
- const roles = config.roleToDisco;
+
+ 
   function discoRole() {
     let random = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
     roles.forEach((role) => {
-      let theRole = message.guild.roles.find("name", role);
+      let theRole = message.guild.roles.find(`name`, "Rainbow");
       if(!theRole) return;
+	        setInterval(() => { discoRole(); }, config.ms);
       theRole.edit({color: random}).catch(e => {
-        return; setInterval(() => { discoRole(); }, config.ms);
+        return;
       });
     });
   }
+
+    setInterval(() => { discoRole(); }, config.ms);
+
  
 
  
-    })
 
+const roles = config.roleToDisco;
+
+})
 client.login(process.env.BOT_TOKEN)
-
-
