@@ -62,7 +62,7 @@ R!invite = لاضافه البوت | Bot Invite
 console.log('Welcome')
 
  
-client.on('ready', () => { 
+client.on('ready', message () => { 
 	const config = require('./config.json');
 
  
