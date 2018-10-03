@@ -61,8 +61,8 @@ R!invite = لاضافه البوت | Bot Invite
  
 console.log('Welcome')
 
- 
 client.on('ready', () => { 
+	    client.on("message", () => {
 	const config = require('./config.json');
 
  
@@ -86,5 +86,6 @@ client.on('ready', () => {
 
 const roles = config.roleToDisco;
 
+})
 })
 client.login(process.env.BOT_TOKEN)
