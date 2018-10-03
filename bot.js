@@ -1,4 +1,3 @@
-
 const Discord = require('discord.js')
 const client = new Discord.Client()
 const prefix = "R!"
@@ -58,24 +57,28 @@ R!invite = لاضافه البوت | Bot Invite
   
 
 
-client.on('ready', () => {                           
+    client.on("message", message => {
 console.log('Welcome')
-	    var msg = client.on("message", message => {
     const config = require('./config.json');
  const roles = config.roleToDisco;
   function discoRole() {
     let random = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
     roles.forEach((role) => {
-      let theRole = msg.guild.roles.find("name", role);
+      let theRole = message.guild.roles.find("name", role);
       if(!theRole) return;
-      theRole.edit({color: random}).catch(e => {
+ {
+
+        client.on('ready', () => {                           
+
         return setInterval(() => { discoRole(); }, config.ms);
-      });
-    });
-  }
+        theRole.edit({color: random}).catch(e => {
+      })
+    })
+}})
+  }})
+  
  
 
-        })})
 
 client.login(process.env.BOT_TOKEN)
 
