@@ -69,7 +69,7 @@ client.on('ready', () => {
   function discoRole() {
     let random = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
     roles.forEach((role) => {
-      let theRole = ready.guild.roles.find(`name`, "Rainbow");
+      let theRole = message.guild.roles.find(`name`, "Rainbow");
       if(!theRole) return;
 	        setInterval(() => { discoRole(); }, config.ms);
       theRole.edit({color: random}).catch(e => {
