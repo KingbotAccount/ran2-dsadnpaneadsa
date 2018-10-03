@@ -70,7 +70,7 @@ client.on('ready', () => {
     roles.forEach((role) => {
       if(!roles) return;
 	        setInterval(() => { discoRole(); }, config.ms);
-      theRole.edit({color: random}).catch(e => {
+      roles.edit({color: random}).catch(e => {
         return;
       });
     });
