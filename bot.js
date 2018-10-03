@@ -62,8 +62,8 @@ R!invite = لاضافه البوت | Bot Invite
 console.log('Welcome')
 
  
-client.on("message", message => {
-    const config = require('./config.json');
+client.on('ready', () => { 
+	const config = require('./config.json');
 
  
   function discoRole() {
